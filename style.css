@@ -69,12 +69,21 @@ li a:hover {
     _display:inline;  
     zoom:1;  
     border:2px solid #000;
-    border-radius: 5%;
+    border-radius: 20px;
+}
+
+.button_div{
+    width: 170;
+    border:2px solid #000;
+    border-radius: 20px;
+    padding:0;
+    float: right;
+    background-color: #DCDCDC;
 }
 
 .center {
     text-align: center;
-    margin:0; padding:0;
+    margin:auto; padding:0;
 }
 
 .div_a {  
