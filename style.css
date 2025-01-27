@@ -6,9 +6,13 @@ body {
 img{
     border-radius: 5%;
 }
-
+h1{
+    font-size: 25px;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
 h2{
-    font-size: 2em;
+    font-size: 20px;
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
@@ -72,12 +76,14 @@ li a:hover {
 }
 
 .button_div{
-    width: 170;
+    width: 100;
     border:2px solid #000;
     border-radius: 20px;
     padding:0;
     float: right;
     background-color: #DCDCDC;
+    margin:auto; padding:0;
+    text-align: center;
 }
 
 .center {
