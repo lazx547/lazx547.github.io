@@ -4,7 +4,7 @@ body {
 }
 
 img{
-    border-radius: 5%;
+    border-radius: 10px
 }
 h1{
     font-size: 25px;
@@ -62,7 +62,19 @@ li a {
 }
  
 li a:hover {
-    background-color: #5b5a5a;
+    background-color: #999999;
+}
+
+.ico{
+    border-radius: 5%;
+}
+
+.img{
+    overflow: hidden;
+}
+
+.img_a:hover{
+    background-color: #999999;
 }
 
 .border_div {
@@ -71,14 +83,13 @@ li a:hover {
     display:inline-block;  
     _display:inline;  
     zoom:1;  
-    border:2px solid #000;
+    border:2px solid #b6b6b6;
     border-radius: 20px;
 }
 
 .button_div{
     width: 100;
-    border:2px solid #000;
-    border-radius: 20px;
+    border-radius: 4px;
     padding:0;
     float: right;
     background-color: #DCDCDC;
@@ -105,3 +116,14 @@ li a:hover {
     _display:inline;  
     zoom:1;  
 }  
+
+/* 为 Chrome、Safari 和 Opera 隐藏滚动条 */
+.lrcl::-webkit-scrollbar {
+    display: none;
+}
+  
+/* 为 IE、Edge 和 Firefox 隐藏滚动条 */
+.lrcl {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
