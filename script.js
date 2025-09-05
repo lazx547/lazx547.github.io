@@ -1,41 +1,27 @@
-const version_s = "v2025.8.21";
-// 获取切换按钮
+const version_s = "v2025.9.5";
+// 获取
 const toggleSwitch = document.querySelector('#checkbox');
 const Github_ico = document.querySelectorAll('.github');
-const Githubpage_ico = document.getElementById('githubpage_ico');
 const themeToggle = document.getElementById('theme-toggle');
-const themeToggleImg = document.getElementById('theme-toggle-img');
-const embeddedContent = document.querySelector('#embedded-content');
-// 检查本地存储中的主题设置
+// 检查本地存储
 let currentTheme = localStorage.getItem('theme');
-
-
+const embeddedContent = document.querySelector('#embedded-content');
 // 切换主题函数
 function switchTheme() {
     if (currentTheme == 'light') {
         currentTheme = 'dark';
         document.documentElement.setAttribute('data-theme', 'dark');
         localStorage.setItem('theme', 'dark');
-        Github_ico.forEach(el => {
-            el.src = "/images/github_d.png";
-        });
-        Githubpage_ico.src = "/images/githubpage_d.png";
-        themeToggleImg.src = "/images/dark.png";
-        applyDarkModeToObject();
+        if(embeddedContent != null) applyDarkModeToObject();
     } else {
         currentTheme = 'light';
         document.documentElement.setAttribute('data-theme', 'light');
         localStorage.setItem('theme', 'light');
-        Github_ico.forEach(el => {
-            el.src = "/images/github.png";
-        });
-        Githubpage_ico.src = "/images/githubpage.png";
-        themeToggleImg.src = "/images/light.png";
-        removeDarkModeFromObject();
+        if(embeddedContent != null) removeDarkModeFromObject();
     }
 }
- // 将黑暗模式应用到嵌入的object内容
- function applyDarkModeToObject() {
+// 将黑暗模式应用到嵌入的object内容
+function applyDarkModeToObject() {
     try {
         const objDocument = embeddedContent.contentDocument;
         if (objDocument) {
@@ -57,32 +43,22 @@ function removeDarkModeFromObject() {
         console.log('无法访问嵌入内容:', e);
     }
 }
-
+// 修改版本号
 function initVersion() {
     const version = document.getElementById('version');
     version.textContent = version_s;
 }
+// 初始化主题
 function initTheme() {
     if (currentTheme == 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
-        Github_ico.forEach(el => {
-            el.src = "/images/github.png";
-        });
-        Githubpage_ico.src = "/images/githubpage.png";
-        themeToggleImg.src = "/images/light.png";
-        applyDarkModeToObject();
+        if(embeddedContent != null) applyDarkModeToObject();
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
-        Github_ico.forEach(el => {
-            el.src = "/images/github_d.png";
-        });
-        Githubpage_ico.src = "/images/githubpage_d.png";
-        themeToggleImg.src = "/images/dark.png";
-        removeDarkModeFromObject();
+        if(embeddedContent != null) removeDarkModeFromObject();
     }
 }
-
-
+// 修改内嵌内容高度
 function loadContent() {
     if (document.documentElement.getAttribute('data-theme') === 'dark') {
         setTimeout(applyDarkModeToObject, 100);
@@ -95,6 +71,7 @@ function loadContent() {
     }
 };
 // 添加事件监听器
+// 点击主题切换按钮
 themeToggle.addEventListener('click', () => {
     switchTheme();
 });
@@ -105,13 +82,16 @@ window.addEventListener('DOMContentLoaded', () => {
     initTheme();
 });
 
-window.addEventListener('load', function() {
-    // 延迟加载以便所有元素准备就绪
-    setTimeout(loadContent, 500);
-});
-window.addEventListener('message', function(event) {
-    if (event.data && event.data.type === 'contentChanged') {
-        // 处理消息
-        loadContent();
-    }
-});
+//
+if (embeddedContent != null) {
+    window.addEventListener('load', function () {
+        // 延迟加载以便所有元素准备就绪
+        setTimeout(loadContent, 500);
+    });
+    window.addEventListener('message', function (event) {
+        if (event.data && event.data.type === 'contentChanged') {
+            // 处理消息
+            loadContent();
+        }
+    });
+};

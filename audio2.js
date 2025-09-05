@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const durationEl = document.getElementById('compact-duration');
     const playIcon = document.getElementById('compact-play-icon');
     const pauseIcon = document.getElementById('compact-pause-icon');
-    const themeToggle = document.getElementById('theme-toggle');
     
     // 状态变量 - 用于解决进度条冲突
     let isUserSeeking = false;
