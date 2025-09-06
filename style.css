@@ -1,17 +1,16 @@
-
 :root {
     /* 浅色模式变量 */
     --bg-color: #ffffff;
     --text-color: #000000;
     --nav-bg-color: #DCDCDC;
-    --div-bg-color:#f6f6f7;
+    --div-bg-color: #f6f6f7;
     --nav-hover-color: #999999;
     --border-color: #b6b6b6;
     --button-bg-color: #DCDCDC;
     --link-color: #000000;
     --link-hover-color: #5b5a5a;
-    --solid-border:6px solid #162e6a;
-    --icon-fill-color:#3c3c43;
+    --solid-border: 6px solid #162e6a;
+    --icon-fill-color: #3c3c43;
 }
 
 [data-theme="dark"] {
@@ -19,24 +18,31 @@
     --bg-color: #1a1a1a;
     --text-color: #e6e6e6;
     --nav-bg-color: #2d2d2d;
-    --div-bg-color:#242427;
+    --div-bg-color: #242427;
     --nav-hover-color: #4d4d4d;
     --border-color: #444444;
     --button-bg-color: #3d3d3d;
     --link-color: #cccccc;
     --link-hover-color: #ffffff;
-    --img-github-link:"./images/github_d.png";
-    --img-githubpage-link:"./images/githubpage_d.png";
-    --solid-border:6px solid #0062d2;
-    --icon-fill-color:#f0f6fc;
+    --img-github-link: "./images/github_d.png";
+    --img-githubpage-link: "./images/githubpage_d.png";
+    --solid-border: 6px solid #0062d2;
+    --icon-fill-color: #f0f6fc;
 }
 
 body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-color);
     color: var(--text-color);
     transition: background-color 0.3s, color 0.3s;
+}
+
+header{
+    margin: 0;
 }
 
 img {
@@ -110,6 +116,7 @@ button {
     background-color: #00000000;
     border-color: #00000000;
 }
+
 button:hover {
     background-color: var(--nav-hover-color);
 }
@@ -196,11 +203,11 @@ button:hover {
     width: 16px;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(26px);
 }
 
@@ -211,11 +218,13 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
 .scroll-container {
     height: 400px;
     padding: 0px;
     overflow-y: auto;
 }
+
 .scroll-container::-webkit-scrollbar {
     width: 10px;
 }
