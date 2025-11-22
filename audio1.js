@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const debugTimeupdate = document.getElementById('debug-timeupdate');
     const debugPosition = document.getElementById('debug-position');
 
-    // 状态变量 - 用于解决进度条冲突
     let autoScroll = true;
+    // 状态变量 - 用于解决进度条冲突
     let isUserSeeking = false;
     let lastUpdateTime = 0;
     const updateThrottleTime = 100; // 毫秒
@@ -295,6 +295,8 @@ document.addEventListener('DOMContentLoaded', function () {
         progressBar.style.width = '0%';
         progressHandle.style.right = '100%';
         statusIndicator.textContent = '播放结束';
+        lines.forEach(line => line.classList.remove('active'));
+        lyricsContainer.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // 格式化时间显示（分:秒）
