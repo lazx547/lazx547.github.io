@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         });
-        console.log(result);
         return result;
     }
     async function fetchLrc() {
@@ -139,8 +138,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 break;
             }
         }
-        console.log(lrc[currentLineIndex].content);
-        console.log(currentTime);
         //移除所有高亮
         lines.forEach(line => line.classList.remove('active'));
 
