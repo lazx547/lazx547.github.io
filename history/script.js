@@ -3,10 +3,10 @@ const CONFIG = {
     CACHE_BUSTING: true              // 是否添加缓存清除参数
 };
 
-let List = [];
+let List = [], List2 = [];
 const pText = document.getElementById('p-text');
 const maxText = document.getElementById('max-text');
-const errorPage = document.getElementById('erroe-page');
+const errorPage = document.getElementById('error-page');
 async function fetchList() {
     try {
         const url = CONFIG.CACHE_BUSTING
@@ -25,7 +25,7 @@ async function fetchList() {
             throw new Error('无效的格式');
         }
 
-        return data.datas;
+        return data;
     } catch (error) {
         console.error('加载失败:', error);
         return [];
@@ -45,7 +45,9 @@ async function loadPage(url) {
 }
 
 async function init() {
-    List = await fetchList()
+    const data = await fetchList();
+    List = data.datas;
+    List2 = data.datas2;
     const index = getFromUrl();
     let url
     if (index) {
@@ -53,7 +55,15 @@ async function init() {
             url = List[index];
             loadPage(url);
         }
-
+        else if(index<0 && Math.abs(index)<=List2.length){
+            url = List2[Math.abs(index)-1];
+            loadPage(url);
+        }
+        else {
+            errorPage.style.display = 'flex';
+            pText.innerText = index;
+            maxText.innerText = List.length - 1;
+        }
     }
     else {
         errorPage.style.display = 'flex';
