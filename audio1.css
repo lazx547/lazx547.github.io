@@ -215,3 +215,17 @@
     flex-direction: column;
     gap: 5px;
 }
+
+.lyrics-line {
+    transition: transform 0.5s ease, color 0.5s ease, font-weight 0.5s ease;
+    transform: scale(0.8);
+    font-size: 25px;
+}
+
+.lyrics-line.active {
+    margin-top: 4;
+    margin-bottom: 4;
+    color: #4a8cff;
+    font-weight: bold;
+    transform: scale(1.0);
+}
