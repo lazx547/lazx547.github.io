@@ -1,4 +1,4 @@
-const version_s = "v2025.11.22";
+const version_s = "v2026.1.3";
 // 获取
 const toggleSwitch = document.querySelector('#checkbox');
 const Github_ico = document.querySelectorAll('.github');
