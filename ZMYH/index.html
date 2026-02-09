@@ -1,13 +1,14 @@
 <html lang="zh-CN">
 
 <head>
-    <title>547>24级学生名单</title>
+    <title>547>载梦远航</title>
     <meta name="keywords" content="547班, 隆安中学" />
     <meta name="description" content="隆安中学本部校区高547班官网" />
     <meta charset="utf-8">
-    <link rel="icon" href="/2024547.ico
-    " type="image/x-icon">
+    <link rel="icon" href="/2024547.ico" type="image/x-icon">
     <link rel="stylesheet" async href="/style.css">
+    <link rel="stylesheet" async href="/audio1.css">
+    <link rel="stylesheet" async href="/tooltip.css">
 </head>
 
 <body style="min-width: 1200;">
@@ -24,7 +25,7 @@
                     <h1 style="font-size: 40px;margin-block-start: 5px;">隆安中学高547班官网</h1>
                 </div>
                 <div style="float:right;width: 40;height: 40;border-radius: 5%;" class="img_a">
-                    <a href="https://github.com/lazx547/lazx547.github.io" target="_blank">
+                    <a href="/https://github.com/lazx547/lazx547.github.io" target="_blank">
                         <svg height="40" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="40"
                             data-view-component="true">
                             <path fill="var(--icon-fill-color)"
@@ -34,7 +35,7 @@
                     </a>
                 </div>
                 <div style="float:right;width: 40;height: 40;border-radius: 5%;" class="img_a">
-                    <a href="https://lazx547.github.io" target="_blank">
+                    <a href="/https://lazx547.github.io" target="_blank">
                         <svg width="40" height="40">
                             <text x="40" y="15" text-anchor="end" font-family="Calibri" font-size="14"
                                 font-weight="bold" fill="var(--icon-fill-color)">
@@ -44,7 +45,7 @@
                     </a>
                 </div>
                 <div style="float:right;width: 40;height: 40;border-radius: 5%;" class="img_a">
-                    <a href="https://lazxg547b.pages.dev" target="_blank">
+                    <a href="/https://lazxg547b.pages.dev" target="_blank">
                         <svg width="40" height="40" viewBox="0 0 1230.574 519.774" xmlns="http://www.w3.org/2000/svg"
                             preserveAspectRatio="xMidYMid meet">
                             <path fill="#F78100"
@@ -79,12 +80,124 @@
             </ul>
         </div>
     </header>
-
     <div style="flex: 1;">
-        <object id="embedded-content" style="border:0px;display: inline-block;width: 100%;" type="text/x-scriptlet"
-            data="/protect/alls_.html"></object>
-        <br style="height: 20;">
+        <div style="height: 50;width: 100%;"></div>
+        <div class="center" style="width: 910;height: 670;background-color: var(--div-bg-color);" id="zmyh">
+            <div style="float: left;border-left: var(--solid-border);clear: both;">
+                <h1 style="position: relative;left: 20;;">载梦远航</h1>
+            </div>
+            <div style="width: 780;height: 50;"><img src=""></div>
+            <div class="center" style="width: 800;height: 620;">
+                <div style="width: 480;height: 620;float: left;">
+                    <div style="width: 470;height: 450;">
+                        <div style="width: 470;height: 20;"></div>
+                        <a class="tooltip" href="/https://wwqb.lanzout.com/b00occ700h" target="_blank">
+                            <img src="https://p2.music.126.net/yQ-PxRIyuciwLP4QAbbucQ==/109951166554570690.jpg?param=1000y1000"
+                                style="width:400;height:400;">
+                            <span class="tooltiptext">点击图片下载无损文件，密码0000</span>
+                        </a>
+                    </div>
+                    <div class="audio-player">
+                        <div class="progress-container" id="progress-container">
+                            <div class="progress-bar" id="progress-bar"></div>
+                            <div class="progress-handle" id="progress-handle"></div>
+                        </div>
+
+                        <!-- 时间显示 -->
+                        <div class="time-display">
+                            <span id="current-time">0:00</span>
+                            <span id="duration">0:00</span>
+                        </div>
+
+                        <!-- 控制按钮 -->
+                        <div class="controls">
+                            <div class="playback-controls">
+                                <button class="control-btn" id="rewind" title="后退10秒">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M11.99 5V1l-5 5 5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6h-2c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z" />
+                                    </svg>
+                                </button>
+
+                                <button class="control-btn" id="play-pause" title="播放/暂停">
+                                    <svg viewBox="0 0 24 24" id="play-icon">
+                                        <path d="M8 5v14l11-7z" />
+                                    </svg>
+                                    <svg viewBox="0 0 24 24" id="pause-icon" style="display: none;">
+                                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                                    </svg>
+                                </button>
+
+                                <button class="control-btn" id="fast-forward" title="前进10秒">
+                                    <svg viewBox="0 0 24 24">
+                                        <path
+                                            d="M12.01 5V1l5 5-5 5V7c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6h2c0 4.42-3.58 8-8 8s-8-3.58-8-8 3.58-8 8-8z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div class="volume-control">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--text-color)">
+                                    <path
+                                        d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                                </svg>
+                                <input type="range" class="volume-slider" id="volume" min="0" max="1" step="0.01"
+                                    value="1" title="音量调节">
+                            </div>
+                        </div>
+
+                        <div class="status-indicator" id="status-indicator" style="display: none;">准备就绪</div>
+
+                        <!-- 隐藏的音频元素 -->
+                        <audio id="audio-element">
+                            <source src="http://music.163.com/song/media/outer/url?id=1889689137.mp3"
+                                type="audio/mpeg">
+                            您的浏览器不支持音频元素。
+                        </audio>
+                    </div>
+
+                    <div class="debug-info" style="display: none;">
+                        <div class="debug-title">调试信息（显示进度条状态）</div>
+                        <div class="debug-content">
+                            <div id="debug-seeking">用户调整: 否</div>
+                            <div id="debug-timeupdate">最后更新: 0ms 前</div>
+                            <div id="debug-position">当前位置: 0%</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="width: 320;height: 550;float: left;">
+                    <div style="width: 320;height: 600;" class="border_div">
+                        <div style="width: 310;height: 600;overflow-y: auto" class="scroll-container" id="lrc-div">
+                            <h3>歌词</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 50;width: 100%;"></div>
+        <div class="center" style="width: 910;min-height: 45;background-color: var(--div-bg-color);" id="zmyh_score">
+            <div style="float: left;border-left: var(--solid-border);clear: both;">
+                <button onclick="scoreS()" style="position: relative;left: 20;">
+                    <h1>查看歌谱</h1>
+                </button><br>
+            </div>
+            <div class="div_a" id="score" style="display: none;">
+                <div class="subd_a" style="width: 300;">
+                    <a href="/ZMYH/jianpu.html">
+                        <h2>简谱</h2>
+                    </a>
+                </div>
+                <div class="subd_a" style="width: 300;">
+                    <a href="/ZMYH/score.html">
+                        <h2>五线谱</h2>
+                    </a>
+                </div>
+            </div>
+            <div style="height: 10;width: 100%;"></div>
+        </div>
+        <div style="height: 50;width: 100%;"></div>
     </div>
+
     <div id="footr" style="background-color:var(--nav-bg-color);height: 48;">
         <div id="footer" style="background-color:var(--nav-bg-color);width:1100" class="center">
             <div style="float: left;width: 20%;background-color:var(--nav-bg-color);">
@@ -103,6 +216,13 @@
         </div>
     </div>
     <script src="/script.js"></script>
+    <script src="/audio1.js"></script>
+    <script>
+        function scoreS() {
+            let score = document.getElementById("score")
+            score.style.display = score.style.display == "none" ? "block" : "none"
+        }
+    </script>
 </body>
 
 </html>
