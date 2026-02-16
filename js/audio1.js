@@ -1,7 +1,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     const CONFIG = {
-        MANIFEST_FILE: '/files/zmyh.lrc',  // 文件清单JSON路径
+        MANIFEST_FILE: '/assets/files/zmyh.lrc',  // 文件清单JSON路径
         CACHE_BUSTING: true              // 是否添加缓存清除参数
     };
 

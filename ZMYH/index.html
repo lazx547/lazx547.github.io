@@ -6,9 +6,9 @@
     <meta name="description" content="隆安中学本部校区高547班官网" />
     <meta charset="utf-8">
     <link rel="icon" href="/2024547.ico" type="image/x-icon">
-    <link rel="stylesheet" async href="/style.css">
-    <link rel="stylesheet" async href="/audio1.css">
-    <link rel="stylesheet" async href="/tooltip.css">
+    <link rel="stylesheet" async href="/css/style.css">
+    <link rel="stylesheet" async href="/css/audio1.css">
+    <link rel="stylesheet" async href="/css/tooltip.css">
 </head>
 
 <body style="min-width: 1200;">
@@ -18,14 +18,14 @@
                 class="center">
                 <div id="menu" style="width:60px;height:60px;float:left;">
                     <a href="/index.html" target="_top">
-                        <img src="/images/2024547.jpg" style="width:60px;height:60px;" class="ico">
+                        <img src="/assets/images/2024547.jpg" style="width:60px;height:60px;" class="ico">
                     </a>
                 </div>
                 <div style="height:60px;float:left;">
                     <h1 style="font-size: 40px;margin-block-start: 5px;">隆安中学高547班官网</h1>
                 </div>
                 <div style="float:right;width: 40;height: 40;border-radius: 5%;" class="img_a">
-                    <a href="/https://github.com/lazx547/lazx547.github.io" target="_blank">
+                    <a href="https:/github.com/lazx547/lazx547.github.io" target="_blank">
                         <svg height="40" aria-hidden="true" viewBox="0 0 24 24" version="1.1" width="40"
                             data-view-component="true">
                             <path fill="var(--icon-fill-color)"
@@ -35,7 +35,7 @@
                     </a>
                 </div>
                 <div style="float:right;width: 40;height: 40;border-radius: 5%;" class="img_a">
-                    <a href="/https://lazx547.github.io" target="_blank">
+                    <a href="https://lazx547.github.io" target="_blank">
                         <svg width="40" height="40">
                             <text x="40" y="15" text-anchor="end" font-family="Calibri" font-size="14"
                                 font-weight="bold" fill="var(--icon-fill-color)">
@@ -45,7 +45,7 @@
                     </a>
                 </div>
                 <div style="float:right;width: 40;height: 40;border-radius: 5%;" class="img_a">
-                    <a href="/https://lazxg547b.pages.dev" target="_blank">
+                    <a href="https://lazxg547b.pages.dev" target="_blank">
                         <svg width="40" height="40" viewBox="0 0 1230.574 519.774" xmlns="http://www.w3.org/2000/svg"
                             preserveAspectRatio="xMidYMid meet">
                             <path fill="#F78100"
@@ -91,7 +91,7 @@
                 <div style="width: 480;height: 620;float: left;">
                     <div style="width: 470;height: 450;">
                         <div style="width: 470;height: 20;"></div>
-                        <a class="tooltip" href="/https://wwqb.lanzout.com/b00occ700h" target="_blank">
+                        <a class="tooltip" href="https://wwqb.lanzout.com/b00occ700h" target="_blank">
                             <img src="https://p2.music.126.net/yQ-PxRIyuciwLP4QAbbucQ==/109951166554570690.jpg?param=1000y1000"
                                 style="width:400;height:400;">
                             <span class="tooltiptext">点击图片下载无损文件，密码0000</span>
@@ -150,8 +150,7 @@
 
                         <!-- 隐藏的音频元素 -->
                         <audio id="audio-element">
-                            <source src="http://music.163.com/song/media/outer/url?id=1889689137.mp3"
-                                type="audio/mpeg">
+                            <source src="http://music.163.com/song/media/outer/url?id=1889689137.mp3" type="audio/mpeg">
                             您的浏览器不支持音频元素。
                         </audio>
                     </div>
@@ -177,7 +176,7 @@
         <div style="height: 50;width: 100%;"></div>
         <div class="center" style="width: 910;min-height: 45;background-color: var(--div-bg-color);" id="zmyh_score">
             <div style="float: left;border-left: var(--solid-border);clear: both;">
-                <button onclick="scoreS()" style="position: relative;left: 20;color: var(--text-color);">
+                <button id="score_bth" style="position: relative;left: 20;color: var(--text-color);">
                     <h1>查看歌谱</h1>
                 </button><br>
             </div>
@@ -201,7 +200,7 @@
     <div id="footr" style="background-color:var(--nav-bg-color);height: 48;">
         <div id="footer" style="background-color:var(--nav-bg-color);width:1100" class="center">
             <div style="float: left;width: 20%;background-color:var(--nav-bg-color);">
-                <img src="/images/2024547.jpg"
+                <img src="/assets/images/2024547.jpg"
                     style="width:45px;height:45px;float: left;background-color:var(--nav-bg-color);border-radius: 0;">
                 <p style="float: left;font-size: 30;">547web</p>
             </div>
@@ -215,13 +214,32 @@
             </div>
         </div>
     </div>
-    <script src="/script.js"></script>
-    <script src="/audio1.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/audio1.js"></script>
     <script>
-        function scoreS() {
+        document.getElementById("score_bth").addEventListener("click", (e) => {
+            if (e.shiftKey) {
+                console.log("s")
+                let link = document.createElement("a")
+                link.href = "/assets/files/zmyh.vpr"
+                link.target = "_blank"
+                link.download = "ZMYH.vpr"
+                link.textContent = "下载VOCALOID工程文件（vpr）"
+                document.getElementById("score").appendChild(link)
+            }
             let score = document.getElementById("score")
-            score.style.display = score.style.display == "none" ? "block" : "none"
-        }
+            if (score.style.display == "none")
+                score.style.display = "block"
+            else {
+                score.style.display = "none"
+                const children = Array.from(score.children);
+                children.forEach(child => {
+                    if (child.tagName === 'A') {
+                        child.remove();
+                    }
+                });
+            }
+        })
     </script>
 </body>
 
