@@ -11,6 +11,8 @@
     --link-hover-color: #5b5a5a;
     --solid-border: 6px solid #162e6a;
     --icon-fill-color: #3c3c43;
+    --img-b:100%;
+    --icon-brightness:1.1;
 }
 
 [data-theme="dark"] {
@@ -28,6 +30,8 @@
     --img-githubpage-link: "./images/githubpage_d.png";
     --solid-border: 6px solid #0062d2;
     --icon-fill-color: #f0f6fc;
+    --img-b:0%;
+    --icon-brightness:0.9;
 }
 
 body {
@@ -237,4 +241,13 @@ input:checked+.slider:before {
 .scroll-container::-webkit-scrollbar-thumb {
     background: var(--nav-bg-color);
     border-radius: 5px;
+}
+
+.img_b{
+    filter: invert(var(--img-b));
+}
+
+
+#web-icon:hover{
+    filter: brightness(var(--icon-brightness));
 }
