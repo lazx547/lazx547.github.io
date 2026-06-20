@@ -1,11 +1,11 @@
-const version_s = "v2026.1.3";
+const version_s = "v2026.6.20";
 // 获取
 const toggleSwitch = document.querySelector('#checkbox');
 const Github_ico = document.querySelectorAll('.github');
 const themeToggle = document.getElementById('theme-toggle');
+const embeddedContent = document.querySelector('#embedded-content');
 // 检查本地存储
 let currentTheme = localStorage.getItem('theme');
-const embeddedContent = document.querySelector('#embedded-content');
 // 切换主题函数
 function switchTheme() {
     if (currentTheme == 'light') {

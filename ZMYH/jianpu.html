@@ -95,11 +95,6 @@
                         </a>
                     </div>
                     <div class="subd_a" style="width: 300;">
-                        <a href="/assets/files/ZMYH.mid" target="_blank" download="载梦远航.mid">
-                            <h2>midi</h2>
-                        </a>
-                    </div>
-                    <div class="subd_a" style="width: 300;">
                         <a href="/assets/files/ZMYH-jp.png" target="_blank" download="载梦远航.png">
                             <h2>PNG 位图</h2>
                         </a>
@@ -110,11 +105,33 @@
             <br style="height: 20;">
             <div style="max-width: 1000;min-width: 300;margin: auto;background-color: var(--div-bg-color);">
                 <div style="float: left;border-left: var(--solid-border)">
-                    <h1 style="position: relative;left: 20;">载梦远航简谱（人声旋律）</h1>
+                    <h1 style="position: relative;left: 20;">《载梦远航》简谱</h1>
+                </div>
+                <br style="clear: both;">
+                <div style="display: block;">
+                    <ul style="float: left;display: block;margin-left: 20;">
+                        <li>
+                            <button class="dis_b dis_a dis_b_c" onclick="setPreviewMode('HTML')" id="html-preview-btn">
+                                <h2>HTML</h2>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dis_b dis_a" onclick="setPreviewMode('PDF')" id="pdf-preview-btn">
+                                <h2>PDF</h2>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dis_b dis_a" onclick="setPreviewMode('PNG')" id="png-preview-btn">
+                                <h2>PNG</h2>
+                            </button>
+                        </li>
+                    </ul>
                 </div>
                 <br style="width: 900;clear: both;">
-                <object id="embedded-content" style="border:0px;display: inline-block;width: 100%;" type="text/x-scriptlet"
-            data="/ZMYH/jianpu_source.html"></object>
+                <object id="html-preview" style="border:0px;display: inline-block;width: 100%;" type="text/x-scriptlet"
+                    data="/ZMYH/jianpu_source.html"></object>
+                <canvas id="pdf-preview" style="display: inline-block;width: 100%;"></canvas>
+                <img style="width: 100%;display: none;" id="png-preview" />
             </div>
             <br style="height: 20;">
         </div>
@@ -137,6 +154,131 @@
         </div>
     </div>
     <script src="/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js"></script>
+    <script>
+        const html_preview = document.getElementById('html-preview');
+        const pdf_preview = document.getElementById('pdf-preview');
+        const png_preview = document.getElementById('png-preview');
+        const html_preview_btn = document.getElementById('html-preview-btn');
+        const pdf_preview_btn = document.getElementById('pdf-preview-btn');
+        const png_preview_btn = document.getElementById('png-preview-btn');
+        function setPreviewMode(type) {
+            switch (type) {
+                case 'HTML':
+                    html_preview.style.display = 'inline-block';
+                    pdf_preview.style.display = 'none';
+                    png_preview.style.display = 'none';
+                    html_preview_btn.classList.add('dis_b_c');
+                    pdf_preview_btn.classList.remove('dis_b_c');
+                    png_preview_btn.classList.remove('dis_b_c');
+                    break;
+                case 'PDF':
+                    pdf_preview.style.display = 'inline-block';
+                    html_preview.style.display = 'none';
+                    png_preview.style.display = 'none';
+                    pdf_preview_btn.classList.add('dis_b_c');
+                    html_preview_btn.classList.remove('dis_b_c');
+                    png_preview_btn.classList.remove('dis_b_c');
+                    renderPDF();
+                    break;
+                case 'PNG':
+                    png_preview.src = "/assets/files/ZMYH-jp.png";
+                    png_preview.style.display = 'inline-block';
+                    html_preview.style.display = 'none';
+                    pdf_preview.style.display = 'none';
+                    pdf_preview_btn.classList.remove('dis_b_c');
+                    html_preview_btn.classList.remove('dis_b_c');
+                    png_preview_btn.classList.add('dis_b_c');
+                    break;
+            }
+        };
+        async function loadPDFJS() {
+
+        }
+        async function renderPDF() {
+            console.log(window.pdfjsLib);
+            const ctx = pdf_preview.getContext('2d');
+
+            const pdf = await window.pdfjsLib.getDocument("/assets/files/ZMYH-jp.pdf").promise;
+            const page = await pdf.getPage(1);
+            const viewport = page.getViewport({ scale: 1 });
+
+            // 物理像素 = 逻辑像素 × 设备像素比
+            pdf_preview.width = viewport.width * devicePixelRatio;
+            pdf_preview.height = viewport.height * devicePixelRatio;
+
+            // CSS显示尺寸保持不变
+            pdf_preview.style.width = viewport.width + 'px';
+            pdf_preview.style.height = viewport.height + 'px';
+
+            // 绘制时缩放上下文
+            ctx.scale(devicePixelRatio, devicePixelRatio);
+            await page.render({
+                canvasContext: ctx,
+                viewport: viewport
+            }).promise;
+
+            return pdf; // 返回pdf对象供后续使用
+        }
+        function loadContent() {
+            try {
+                const contentHeight = html_preview.contentDocument.documentElement.scrollHeight;
+                html_preview.style.height = contentHeight + 'px';
+            } catch (e) {
+                console.log('无法获取内容高度:', e);
+            }
+            try {
+                const doc = html_preview.contentDocument;
+                if (!doc) {
+                    console.log('无法访问 object 内容，可能跨域');
+                    return;
+                }
+
+                // 获取 body 中的第一个 div（外层）
+                const outerDiv = doc.body.querySelector('div');
+                if (!outerDiv) return;
+
+                // 获取外层 div 中的第一个 div（内层容器）
+                const innerDiv = outerDiv.querySelector('div');
+                if (!innerDiv) return;
+
+                // 获取内层容器的所有子元素
+                const children = Array.from(innerDiv.children);
+
+                // 如果子元素数量 >= 2，删除倒数两个
+                if (children.length >= 2) {
+                    const lastIndex = children.length - 1;
+                    const secondLastIndex = children.length - 2;
+
+                    // 从后往前删除，避免索引变化
+                    // 先删除最后一个
+                    if (innerDiv.children[lastIndex]) {
+                        innerDiv.removeChild(innerDiv.children[lastIndex]);
+                    }
+                    // 再删除新的最后一个（原倒数第二个）
+                    if (innerDiv.children[secondLastIndex]) {
+                        innerDiv.removeChild(innerDiv.children[secondLastIndex]);
+                    }
+                }
+
+            } catch (e) {
+                console.log(`操作 ${pdf_preview.data} 失败:`, e);
+            }
+        };
+        if (html_preview != null) {
+            window.addEventListener('load', function () {
+                // 延迟加载以便所有元素准备就绪
+                setTimeout(loadContent, 500);
+            });
+            window.addEventListener('message', function (event) {
+                if (event.data && event.data.type === 'contentChanged') {
+                    // 处理消息
+                    loadContent();
+                }
+            });
+        };
+    </script>
 </body>
 
 </html>

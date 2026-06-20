@@ -11,8 +11,8 @@
     --link-hover-color: #5b5a5a;
     --solid-border: 6px solid #162e6a;
     --icon-fill-color: #3c3c43;
-    --img-b:100%;
-    --icon-brightness:1.1;
+    --img-b: 100%;
+    --icon-brightness: 1.1;
 }
 
 [data-theme="dark"] {
@@ -30,8 +30,8 @@
     --img-githubpage-link: "./images/githubpage_d.png";
     --solid-border: 6px solid #0062d2;
     --icon-fill-color: #f0f6fc;
-    --img-b:0%;
-    --icon-brightness:0.9;
+    --img-b: 0%;
+    --icon-brightness: 0.9;
 }
 
 body {
@@ -45,7 +45,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-header{
+header {
     margin: 0;
 }
 
@@ -83,6 +83,16 @@ a:hover {
 
 .dis_a:hover {
     color: var(--link-color);
+}
+
+.dis_b {
+    float: left;
+    width: 120px;
+    height: 30px;
+}
+
+.dis_b_c{
+    background-color: var(--nav-hover-color);
 }
 
 p {
@@ -243,11 +253,11 @@ input:checked+.slider:before {
     border-radius: 5px;
 }
 
-.img_b{
+.img_b {
     filter: invert(var(--img-b));
 }
 
 
-#web-icon:hover{
+#web-icon:hover {
     filter: brightness(var(--icon-brightness));
 }

@@ -174,6 +174,35 @@
             </div>
         </div>
         <div style="height: 50;width: 100%;"></div>
+        <div class="center" style="width: 910;min-height: 45;background-color: var(--div-bg-color);" id="music_website">
+            <div style="float: left;border-left: var(--solid-border);clear: both;">
+                <h1 style="position: relative;left: 20;color: var(--text-color);">音乐平台</h1>
+            </div>
+            <div class="div_a">
+                <div class="subd_a" style="width: 200;">
+                    <a href="https://www.kugou.com/song/#hash=7BE2D21B1F0C3C78FCE54B789EFC73F1&album_id=49837923" target="_blank">
+                        <h2>酷狗音乐</h2>
+                    </a>
+                </div>
+                <div class="subd_a" style="width: 200;">
+                    <a href="https://music.163.com/#/song?id=1889689137" target="_blank">
+                        <h2>网易云音乐</h2>
+                    </a>
+                </div>
+                <div class="subd_a" style="width: 200;">
+                    <a href="https://www.kuwo.cn/play_detail/277083584" target="_blank">
+                        <h2>酷我音乐</h2>
+                    </a>
+                </div>
+                <div class="subd_a" style="width: 200;">
+                    <a href="https://y.qq.com/n/ryqq_v2/songDetail/004TPnya1ULezc" target="_blank">
+                        <h2>QQ音乐</h2>
+                    </a>
+                </div>
+            </div>
+            <div style="height: 10;width: 100%;"></div>
+        </div>
+        <div style="height: 50;width: 100%;"></div>
         <div class="center" style="width: 910;min-height: 45;background-color: var(--div-bg-color);" id="zmyh_score">
             <div style="float: left;border-left: var(--solid-border);clear: both;">
                 <button id="score_bth" style="position: relative;left: 20;color: var(--text-color);">
@@ -190,6 +219,38 @@
                     <a href="/ZMYH/score.html">
                         <h2>五线谱</h2>
                     </a>
+                </div>
+                <div style="height: 10;width: 100%;"></div>
+                <div class="div_a">
+                    <h1 style="margin-bottom: 0;color: var(--text-color);">文件下载</h1>
+                    <div class="subd_a" style="width: 300;">
+                        <a class="tooltip" href="/assets/files/zmyh.vpr" target="_blank" download="ZMYH.vpr">
+                            <h2>VOCALOID 工程文件</h2>
+                            <span class="tooltiptext">歌手：星尘v4</span>
+                        </a>
+                    </div>
+                    <div class="subd_a" style="width: 300;">
+                        <a class="tooltip" href="/assets/files/zmyh.ustx" target="_blank" download="ZMYH.ustx">
+                            <h2>OpenUtau 工程文件</h2>
+                            <span class="tooltiptext">歌手：泠鸢yousa v1.56</span>
+                        </a>
+                    </div>
+                    <div class="subd_a" style="width: 300;">
+                        <a href="/assets/files/ZMYH.mid" target="_blank" download="ZMYH.mid">
+                            <h2>midi</h2>
+                        </a>
+                    </div>
+                    <div class="subd_a" style="width: 300;">
+                        <a href="/assets/files/zmth.mscz" target="_blank" download="ZMYH.mscz">
+                            <h2> MuseScore 项目文件</h2>
+                        </a>
+                    </div>
+                    <div class="subd_a" style="width: 300;">
+                        <a class="tooltip" href="/assets/files/zmth.spnmn" target="_blank" download="ZMYH.spnmn">
+                            <h2> SparkNMN 项目文件</h2>
+                            <span class="tooltiptext">简谱原始文件</span>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div style="height: 10;width: 100%;"></div>
@@ -218,27 +279,23 @@
     <script src="/js/audio1.js"></script>
     <script>
         document.getElementById("score_bth").addEventListener("click", (e) => {
-            if (e.shiftKey) {
-                console.log("s")
-                let link = document.createElement("a")
-                link.href = "/assets/files/zmyh.vpr"
-                link.target = "_blank"
-                link.download = "ZMYH.vpr"
-                link.textContent = "下载VOCALOID工程文件（vpr）"
-                document.getElementById("score").appendChild(link)
-            }
             let score = document.getElementById("score")
-            if (score.style.display == "none")
-                score.style.display = "block"
-            else {
-                score.style.display = "none"
-                const children = Array.from(score.children);
-                children.forEach(child => {
-                    if (child.tagName === 'A') {
-                        child.remove();
-                    }
-                });
+            if (e.shiftKey) {
+                if (score.style.display == "none")
+                    score.style.display = "block"
+                else {
+                    score.style.display = "none"
+                }
             }
+            else {
+                if (score.style.display == "block") {
+                    score.style.display = "none"
+                }
+                else {
+                    window.location.href = "/ZMYH/jianpu.html"
+                }
+            }
+
         })
     </script>
 </body>
