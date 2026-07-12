@@ -1,7 +1,7 @@
 <html lang="zh-CN">
 
 <head>
-    <title>547>20250511</title>
+    <title>547>加密</title>
     <meta name="keywords" content="547班, 隆安中学" />
     <meta name="description" content="隆安中学本部校区高547班官网" />
     <meta charset="utf-8">
@@ -9,7 +9,7 @@
     " type="image/x-icon">
     <link rel="stylesheet" async href="/css/style.css">
     <link rel="stylesheet" async href="/css/audio2.css">
-    <link rel="stylesheet" async href="css/ico/fcicon.css">
+    <link rel="stylesheet" async href="/css/ico/fcicon.css">
 </head>
 
 <body style="min-width: 1200;">
@@ -76,7 +76,7 @@
             <ul style="height: 40;">
                 <li><a class="dis_a" target="_top" href="/index.html" style="padding: 10px 0;width: 60;">主页</a></li>
                 <li><a class="dis_a" target="_top" href="/DXMB.html" style="padding: 10px 0;width: 80;">大学目标</a></li>
-                <li><a class="dis_a" target="_top" href="/ZMYH/" style="padding: 10px 0;width: 80;">载梦远航</a></li>
+                <li><a class="dis_a" target="_top" href="/ZMYH//" style="padding: 10px 0;width: 80;">载梦远航</a></li>
                 <li><a class="dis_a" target="_top" href="/about.html" style="padding: 10px 0;width: 60;">关于</a></li>
             </ul>
         </div>
@@ -87,24 +87,42 @@
         <div class="center">
             <div style="max-width: 1000;min-width: 300;margin: auto;background-color: var(--div-bg-color);">
                 <div style="float: left;border-left: var(--solid-border)">
-                    <h1 id="content-title">请输入密码</h1>
+                    <h1 style="position: relative;left: 20;">加密</h1>
                 </div>
                 <br style="width: 900;clear: both;">
-                <div id="content" class="center">
-                    <div style="position:relative; display:inline-block;">
-                        <input type="password" id="password" placeholder="输入密码">
-                        <button type="button" onclick="togglePwd()"
-                            style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:20px;"
-                            id="eyeBtn">
-                            <img id="eyeImg" alt="template_toggle_show" title="template_toggle_show"
-                                style="width: 15px; height: 15px;"
-                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4LjggNS4xQzI4LjQtMy4xIDEzLjMtMS4yIDUuMSA5LjJTLTEuMiAzNC43IDkuMiA0Mi45bDU5MiA0NjRjMTAuNCA4LjIgMjUuNSA2LjMgMzMuNy00LjFzNi4zLTI1LjUtNC4xLTMzLjdMNTI1LjYgMzg2LjdjMzkuNi00MC42IDY2LjQtODYuMSA3OS45LTExOC40YzMuMy03LjkgMy4zLTE2LjcgMC0yNC42Yy0xNC45LTM1LjctNDYuMi04Ny43LTkzLTEzMS4xQzQ2NS41IDY4LjggNDAwLjggMzIgMzIwIDMyYy02OC4yIDAtMTI1IDI2LjMtMTY5LjMgNjAuOEwzOC44IDUuMXpNMjIzLjEgMTQ5LjVDMjQ4LjYgMTI2LjIgMjgyLjcgMTEyIDMyMCAxMTJjNzkuNSAwIDE0NCA2NC41IDE0NCAxNDRjMCAyNC45LTYuMyA0OC4zLTE3LjQgNjguN0w0MDggMjk0LjVjOC40LTE5LjMgMTAuNi00MS40IDQuOC02My4zYy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM2MwIDEwLjItMi40IDE5LjgtNi42IDI4LjNsLTkwLjMtNzAuOHpNMzczIDM4OS45Yy0xNi40IDYuNS0zNC4zIDEwLjEtNTMgMTAuMWMtNzkuNSAwLTE0NC02NC41LTE0NC0xNDRjMC02LjkgLjUtMTMuNiAxLjQtMjAuMkw4My4xIDE2MS41QzYwLjMgMTkxLjIgNDQgMjIwLjggMzQuNSAyNDMuN2MtMy4zIDcuOS0zLjMgMTYuNyAwIDI0LjZjMTQuOSAzNS43IDQ2LjIgODcuNyA5MyAxMzEuMUMxNzQuNSA0NDMuMiAyMzkuMiA0ODAgMzIwIDQ4MGM0Ny44IDAgODkuOS0xMi45IDEyNi4yLTMyLjVMMzczIDM4OS45eiIvPjwvc3ZnPg==" />
-                        </button>
-                    </div>
-                    <button id="decrypt-button" onclick="decryptData()">确认</button>
-                    <p id="status"></p>
+                <textarea id="data" placeholder="输入要加密的数据"></textarea>
+                <div style="position:relative; display:inline-block;">
+                    <input type="password" id="password" placeholder="输入密码">
+                    <button type="button" onclick="togglePwd()"
+                        style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:20px;"
+                        id="eyeBtn">
+                        <img id="eyeImg" alt="template_toggle_show" title="template_toggle_show" style="width: 15px; height: 15px;"
+                            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4LjggNS4xQzI4LjQtMy4xIDEzLjMtMS4yIDUuMSA5LjJTLTEuMiAzNC43IDkuMiA0Mi45bDU5MiA0NjRjMTAuNCA4LjIgMjUuNSA2LjMgMzMuNy00LjFzNi4zLTI1LjUtNC4xLTMzLjdMNTI1LjYgMzg2LjdjMzkuNi00MC42IDY2LjQtODYuMSA3OS45LTExOC40YzMuMy03LjkgMy4zLTE2LjcgMC0yNC42Yy0xNC45LTM1LjctNDYuMi04Ny43LTkzLTEzMS4xQzQ2NS41IDY4LjggNDAwLjggMzIgMzIwIDMyYy02OC4yIDAtMTI1IDI2LjMtMTY5LjMgNjAuOEwzOC44IDUuMXpNMjIzLjEgMTQ5LjVDMjQ4LjYgMTI2LjIgMjgyLjcgMTEyIDMyMCAxMTJjNzkuNSAwIDE0NCA2NC41IDE0NCAxNDRjMCAyNC45LTYuMyA0OC4zLTE3LjQgNjguN0w0MDggMjk0LjVjOC40LTE5LjMgMTAuNi00MS40IDQuOC02My4zYy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM2MwIDEwLjItMi40IDE5LjgtNi42IDI4LjNsLTkwLjMtNzAuOHpNMzczIDM4OS45Yy0xNi40IDYuNS0zNC4zIDEwLjEtNTMgMTAuMWMtNzkuNSAwLTE0NC02NC41LTE0NC0xNDRjMC02LjkgLjUtMTMuNiAxLjQtMjAuMkw4My4xIDE2MS41QzYwLjMgMTkxLjIgNDQgMjIwLjggMzQuNSAyNDMuN2MtMy4zIDcuOS0zLjMgMTYuNyAwIDI0LjZjMTQuOSAzNS43IDQ2LjIgODcuNyA5MyAxMzEuMUMxNzQuNSA0NDMuMiAyMzkuMiA0ODAgMzIwIDQ4MGM0Ny44IDAgODkuOS0xMi45IDEyNi4yLTMyLjVMMzczIDM4OS45eiIvPjwvc3ZnPg==" />
+                    </button>
                 </div>
 
+                <button id="encrypt-button" onclick="encryptData()">加密</button>
+            </div>
+            <div style="height: 20;width: 100%;"></div>
+            <div style="max-width: 1000;min-width: 300;margin: auto;background-color: var(--div-bg-color);">
+                <div style="float: left;border-left: var(--solid-border)">
+                    <h1 style="position: relative;left: 20;">输出</h1>
+                </div>
+                <br style="width: 900;clear: both;">
+                <p id="status">等待操作</p>
+                <div>
+                    <h3 class="encrypted-output-h3">加密结果</h3>
+                    <textarea id="output-encrypted" class="encrypted-output-textarea" style="height: 100;"></textarea>
+                    <button class="copy-button" onclick="copyToClipboard('output-encrypted')">复制</button>
+                    <br style="clear: both;">
+                </div>
+                <div>
+                    <h3 class="encrypted-output-h3">密码哈希</h3>
+                    <textarea id="output-hash" class="encrypted-output-textarea"></textarea>
+                    <button class="copy-button" onclick="copyToClipboard('output-hash')">复制</button>
+                    <br style="clear: both;">
+                </div>
+                <button  onclick="openInDecryptPage()">在解密页面中打开</button>
             </div>
         </div>
     </div>
@@ -132,8 +150,7 @@
             "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4LjggNS4xQzI4LjQtMy4xIDEzLjMtMS4yIDUuMSA5LjJTLTEuMiAzNC43IDkuMiA0Mi45bDU5MiA0NjRjMTAuNCA4LjIgMjUuNSA2LjMgMzMuNy00LjFzNi4zLTI1LjUtNC4xLTMzLjdMNTI1LjYgMzg2LjdjMzkuNi00MC42IDY2LjQtODYuMSA3OS45LTExOC40YzMuMy03LjkgMy4zLTE2LjcgMC0yNC42Yy0xNC45LTM1LjctNDYuMi04Ny43LTkzLTEzMS4xQzQ2NS41IDY4LjggNDAwLjggMzIgMzIwIDMyYy02OC4yIDAtMTI1IDI2LjMtMTY5LjMgNjAuOEwzOC44IDUuMXpNMjIzLjEgMTQ5LjVDMjQ4LjYgMTI2LjIgMjgyLjcgMTEyIDMyMCAxMTJjNzkuNSAwIDE0NCA2NC41IDE0NCAxNDRjMCAyNC45LTYuMyA0OC4zLTE3LjQgNjguN0w0MDggMjk0LjVjOC40LTE5LjMgMTAuNi00MS40IDQuOC02My4zYy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM2MwIDEwLjItMi40IDE5LjgtNi42IDI4LjNsLTkwLjMtNzAuOHpNMzczIDM4OS45Yy0xNi40IDYuNS0zNC4zIDEwLjEtNTMgMTAuMWMtNzkuNSAwLTE0NC02NC41LTE0NC0xNDRjMC02LjkgLjUtMTMuNiAxLjQtMjAuMkw4My4xIDE2MS41QzYwLjMgMTkxLjIgNDQgMjIwLjggMzQuNSAyNDMuN2MtMy4zIDcuOS0zLjMgMTYuNyAwIDI0LjZjMTQuOSAzNS43IDQ2LjIgODcuNyA5MyAxMzEuMUMxNzQuNSA0NDMuMiAyMzkuMiA0ODAgMzIwIDQ4MGM0Ny44IDAgODkuOS0xMi45IDEyNi4yLTMyLjVMMzczIDM4OS45eiIvPjwvc3ZnPg==";
         const imgSrcEyeOpened =
             "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTI4OCAzMmMtODAuOCAwLTE0NS41IDM2LjgtMTkyLjYgODAuNkM0OC42IDE1NiAxNy4zIDIwOCAyLjUgMjQzLjdjLTMuMyA3LjktMy4zIDE2LjcgMCAyNC42QzE3LjMgMzA0IDQ4LjYgMzU2IDk1LjQgMzk5LjRDMTQyLjUgNDQzLjIgMjA3LjIgNDgwIDI4OCA0ODBzMTQ1LjUtMzYuOCAxOTIuNi04MC42YzQ2LjgtNDMuNSA3OC4xLTk1LjQgOTMtMTMxLjFjMy4zLTcuOSAzLjMtMTYuNyAwLTI0LjZjLTE0LjktMzUuNy00Ni4yLTg3LjctOTMtMTMxLjFDNDMzLjUgNjguOCAzNjguOCAzMiAyODggMzJ6TTE0NCAyNTZhMTQ0IDE0NCAwIDEgMSAyODggMCAxNDQgMTQ0IDAgMSAxIC0yODggMHptMTQ0LTY0YzAgMzUuMy0yOC43IDY0LTY0IDY0Yy03LjEgMC0xMy45LTEuMi0yMC4zLTMuM2MtNS41LTEuOC0xMS45IDEuNi0xMS43IDcuNGMuMyA2LjkgMS4zIDEzLjggMy4yIDIwLjdjMTMuNyA1MS4yIDY2LjQgODEuNiAxMTcuNiA2Ny45czgxLjYtNjYuNCA2Ny45LTExNy42Yy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM3oiLz48L3N2Zz4=";
-        const encryptData = "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"
-        const passwordHash = "9dRTJTSXkdfPnpMoZOThJQEkeIiK4BwAVnpnO8DvsjE="
+        
         function togglePwd() {
             const input = document.getElementById('password');
             const eyeImg = document.getElementById('eyeImg');
@@ -145,45 +162,58 @@
                 eyeImg.src = imgSrcEyeClosed;
             }
         }
-        function getDataFromUrl() {
-            const passwordArea = document.getElementById('password');
-            const params = new URLSearchParams(window.location.search);
-            const password = params.get('password');
-            if (password) {
-                passwordArea.value = password;
-                decryptData();
-            }
+        function copyToClipboard(elementId) {
+            const textArea = document.getElementById(elementId);
+            const status = document.getElementById('status');
+            textArea.select();
+            textArea.setSelectionRange(0, 99999); // For mobile devices
+            status.textContent=document.execCommand('copy')?"已复制到剪贴板":"复制失败，请手动复制";
         }
-        function decryptData() {
+        function openInDecryptPage() {
+            const encryptedData = document.getElementById('output-encrypted').value;
+            const passwordHash = document.getElementById('output-hash').value;
+            status = document.getElementById('status');
+            if (!encryptedData || !passwordHash) {
+                status.textContent = '请先进行加密操作';
+                return;
+            }
+            const decryptUrl = `decrypt.html?data=${encodeURIComponent(encryptedData)}&hash=${encodeURIComponent(passwordHash)}`;
+            window.open(decryptUrl, '_blank');
+        }
+        function encryptData() {
+            const data = document.getElementById('data').value;
             const password = document.getElementById('password').value;
             const outputEncrypted = document.getElementById('output-encrypted');
+            const outputHash = document.getElementById('output-hash');
             const status = document.getElementById('status');
-            window.history.replaceState(null, '', `?password=${encodeURIComponent(password)}`);
-            if (!password) {
+            var other_info = "";
+            if (!data) {
+                status.textContent = '请输入数据';
+                return;
+            }
+            else if (!password) {
                 status.textContent = '请输入密码';
                 return;
             }
-            window.CryptoLib.sha256(password).then(hash => {
-                if (hash !== passwordHash) {
-                    status.textContent = '密码错误';
-                    return;
-                }
-                else {
-                    window.CryptoLib.decryptAES(encryptData, password)
-                        .then(decryptedData => {
-                            status.textContent = '解密成功';
-                            var data = JSON.parse(decryptedData);
-                            document.getElementById('content-title').textContent = data.title;
-                            document.getElementById('content').innerHTML = '<p style="width: 85%;" class="center">' + data.content + '</p>';
-                        })
-                        .catch(error => {
-                            status.textContent = '密码错误或数据损坏';
-                        });
-                }
-            });
 
+            if (password.length < 8) {
+                other_info = '你的密码有点短';
+            }
+
+            window.CryptoLib.encryptAES(data, password)
+                .then(encryptedData => {
+                    status.textContent = '加密成功' + (other_info ? "，但是" : "") + other_info;
+                    outputEncrypted.value = encryptedData;
+                    window.CryptoLib.sha256(password).then(hash => {
+                        outputHash.value = hash;
+                    });
+                })
+                .catch(error => {
+                    status.textContent = '加密失败' + (other_info ? "，而且" : "") + other_info;
+                    console.error('加密失败:', error);
+                    alert('加密失败，请检查控制台日志');
+                });
         }
-        window.onload = getDataFromUrl;
     </script>
 </body>
 

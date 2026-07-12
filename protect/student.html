@@ -8,6 +8,38 @@
     <link rel="icon" href="/2024547.ico
     " type="image/x-icon">
     <link rel="stylesheet" async href="/css/style.css">
+    <style>
+        .box {
+            margin-left: 20%;
+            width: 60%;
+            background-color: #f0f0f0;
+        }
+
+        .dark-mode .box {
+            background-color: #2d2d2d;
+        }
+
+        .center {
+            text-align: center;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .title {
+            border-left: 6px solid #162e6a;
+            float: left;
+        }
+
+        .dark-mode .title {
+            border-left: 6px solid #0062d2
+        }
+
+        .pp {
+            font-size: 20px;
+            margin: 0;
+            margin-block-end: 2px;
+        }
+    </style>
 </head>
 
 <body style="min-width: 1200;">
@@ -79,13 +111,35 @@
             </ul>
         </div>
     </header>
-    
+
     <div style="flex: 1;">
-        <object id="embedded-content" style="border:0px;display: inline-block;width: 100%;" type="text/x-scriptlet"
-        data="/protect/student_.html"></object>
-    <br style="height: 20;">
+        <div style="height: 20;width: 100%;"></div>
+        <div class="center" style="max-width: 1000;min-width: 300" id="contents">
+            <div style="max-width: 1000;min-width: 300;margin: auto;background-color: var(--div-bg-color);">
+                <div style="float: left;border-left: var(--solid-border)">
+                    <h1 id="content-title">请输入密码</h1>
+                </div>
+                <br style="width: 900;clear: both;">
+                <div id="content" class="center">
+                    <div style="position:relative; display:inline-block;">
+                        <input type="password" id="password" placeholder="输入密码">
+                        <button type="button" onclick="togglePwd()"
+                            style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:20px;"
+                            id="eyeBtn">
+                            <img id="eyeImg" alt="template_toggle_show" title="template_toggle_show"
+                                style="width: 15px; height: 15px;"
+                                src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4LjggNS4xQzI4LjQtMy4xIDEzLjMtMS4yIDUuMSA5LjJTLTEuMiAzNC43IDkuMiA0Mi45bDU5MiA0NjRjMTAuNCA4LjIgMjUuNSA2LjMgMzMuNy00LjFzNi4zLTI1LjUtNC4xLTMzLjdMNTI1LjYgMzg2LjdjMzkuNi00MC42IDY2LjQtODYuMSA3OS45LTExOC40YzMuMy03LjkgMy4zLTE2LjcgMC0yNC42Yy0xNC45LTM1LjctNDYuMi04Ny43LTkzLTEzMS4xQzQ2NS41IDY4LjggNDAwLjggMzIgMzIwIDMyYy02OC4yIDAtMTI1IDI2LjMtMTY5LjMgNjAuOEwzOC44IDUuMXpNMjIzLjEgMTQ5LjVDMjQ4LjYgMTI2LjIgMjgyLjcgMTEyIDMyMCAxMTJjNzkuNSAwIDE0NCA2NC41IDE0NCAxNDRjMCAyNC45LTYuMyA0OC4zLTE3LjQgNjguN0w0MDggMjk0LjVjOC40LTE5LjMgMTAuNi00MS40IDQuOC02My4zYy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM2MwIDEwLjItMi40IDE5LjgtNi42IDI4LjNsLTkwLjMtNzAuOHpNMzczIDM4OS45Yy0xNi40IDYuNS0zNC4zIDEwLjEtNTMgMTAuMWMtNzkuNSAwLTE0NC02NC41LTE0NC0xNDRjMC02LjkgLjUtMTMuNiAxLjQtMjAuMkw4My4xIDE2MS41QzYwLjMgMTkxLjIgNDQgMjIwLjggMzQuNSAyNDMuN2MtMy4zIDcuOS0zLjMgMTYuNyAwIDI0LjZjMTQuOSAzNS43IDQ2LjIgODcuNyA5MyAxMzEuMUMxNzQuNSA0NDMuMiAyMzkuMiA0ODAgMzIwIDQ4MGM0Ny44IDAgODkuOS0xMi45IDEyNi4yLTMyLjVMMzczIDM4OS45eiIvPjwvc3ZnPg==" />
+                        </button>
+                    </div>
+                    <button id="decrypt-button" onclick="decryptData()">确认</button>
+                    <p id="status"></p>
+                    <div style="height: 20;width: 100%;"></div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    
+
     <div id="footr" style="background-color:var(--nav-bg-color);height: 48;">
         <div id="footer" style="background-color:var(--nav-bg-color);width:1100" class="center">
             <div style="float: left;width: 20%;background-color:var(--nav-bg-color);">
@@ -104,6 +158,86 @@
         </div>
     </div>
     <script src="/js/script.js"></script>
+    <script src="/js/cryption.js"></script>
+    <script>
+        const imgSrcEyeClosed =
+            "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NDAgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTM4LjggNS4xQzI4LjQtMy4xIDEzLjMtMS4yIDUuMSA5LjJTLTEuMiAzNC43IDkuMiA0Mi45bDU5MiA0NjRjMTAuNCA4LjIgMjUuNSA2LjMgMzMuNy00LjFzNi4zLTI1LjUtNC4xLTMzLjdMNTI1LjYgMzg2LjdjMzkuNi00MC42IDY2LjQtODYuMSA3OS45LTExOC40YzMuMy03LjkgMy4zLTE2LjcgMC0yNC42Yy0xNC45LTM1LjctNDYuMi04Ny43LTkzLTEzMS4xQzQ2NS41IDY4LjggNDAwLjggMzIgMzIwIDMyYy02OC4yIDAtMTI1IDI2LjMtMTY5LjMgNjAuOEwzOC44IDUuMXpNMjIzLjEgMTQ5LjVDMjQ4LjYgMTI2LjIgMjgyLjcgMTEyIDMyMCAxMTJjNzkuNSAwIDE0NCA2NC41IDE0NCAxNDRjMCAyNC45LTYuMyA0OC4zLTE3LjQgNjguN0w0MDggMjk0LjVjOC40LTE5LjMgMTAuNi00MS40IDQuOC02My4zYy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM2MwIDEwLjItMi40IDE5LjgtNi42IDI4LjNsLTkwLjMtNzAuOHpNMzczIDM4OS45Yy0xNi40IDYuNS0zNC4zIDEwLjEtNTMgMTAuMWMtNzkuNSAwLTE0NC02NC41LTE0NC0xNDRjMC02LjkgLjUtMTMuNiAxLjQtMjAuMkw4My4xIDE2MS41QzYwLjMgMTkxLjIgNDQgMjIwLjggMzQuNSAyNDMuN2MtMy4zIDcuOS0zLjMgMTYuNyAwIDI0LjZjMTQuOSAzNS43IDQ2LjIgODcuNyA5MyAxMzEuMUMxNzQuNSA0NDMuMiAyMzkuMiA0ODAgMzIwIDQ4MGM0Ny44IDAgODkuOS0xMi45IDEyNi4yLTMyLjVMMzczIDM4OS45eiIvPjwvc3ZnPg==";
+        const imgSrcEyeOpened =
+            "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1NzYgNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNS4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjQgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTI4OCAzMmMtODAuOCAwLTE0NS41IDM2LjgtMTkyLjYgODAuNkM0OC42IDE1NiAxNy4zIDIwOCAyLjUgMjQzLjdjLTMuMyA3LjktMy4zIDE2LjcgMCAyNC42QzE3LjMgMzA0IDQ4LjYgMzU2IDk1LjQgMzk5LjRDMTQyLjUgNDQzLjIgMjA3LjIgNDgwIDI4OCA0ODBzMTQ1LjUtMzYuOCAxOTIuNi04MC42YzQ2LjgtNDMuNSA3OC4xLTk1LjQgOTMtMTMxLjFjMy4zLTcuOSAzLjMtMTYuNyAwLTI0LjZjLTE0LjktMzUuNy00Ni4yLTg3LjctOTMtMTMxLjFDNDMzLjUgNjguOCAzNjguOCAzMiAyODggMzJ6TTE0NCAyNTZhMTQ0IDE0NCAwIDEgMSAyODggMCAxNDQgMTQ0IDAgMSAxIC0yODggMHptMTQ0LTY0YzAgMzUuMy0yOC43IDY0LTY0IDY0Yy03LjEgMC0xMy45LTEuMi0yMC4zLTMuM2MtNS41LTEuOC0xMS45IDEuNi0xMS43IDcuNGMuMyA2LjkgMS4zIDEzLjggMy4yIDIwLjdjMTMuNyA1MS4yIDY2LjQgODEuNiAxMTcuNiA2Ny45czgxLjYtNjYuNCA2Ny45LTExNy42Yy0xMS4xLTQxLjUtNDcuOC02OS40LTg4LjYtNzEuMWMtNS44LS4yLTkuMiA2LjEtNy40IDExLjdjMi4xIDYuNCAzLjMgMTMuMiAzLjMgMjAuM3oiLz48L3N2Zz4=";
+        const encryptData = "Cq8pkjB8JRpLTxzBo1Lwrz/c8gEKk8zDhDfJbUHRfJN/B5ktxkNTkknnXFb0pQEjGw18W6VRxB+IsEVinyuNuZK0cOpGxxtiBJT7lho/FANFTreAy9w5wHQUFwHoKPrmyUxdGCSXW2JPhPdxktOD2MNBhyFg6Tvyi9mTPVmPAPjtu59F7YEYaViyRdHDOgtdDJEnfGIjvyZgAjGEh88cyHilNn/6f0OFm03LKbCTHovsbd7qk2VXFl3pQ8RHJVAO9AvWpoAfr1AQatVy7Zg8IpvXBSDynkMab5UWq/SEZnyNGMXsrFeApaXmSnaDUPM41ot0wGbA75famthF26ml4uwV+Hcgw2Dd3U95PDtSprhETdFWppJ5HXjDncQUHIaq8FWhuyHnD5Cu+50po+K6xah1vfnIP9mhVZnZUYjNfKOYy895kH+wOG9ozIfzqaIesyks4sBo8W5dYIQpKGYFJDOsvhG/H0clJTRcpf25OLB4A9z+8Nq7Bbebo8FJsdkChL1V0VYX7NabQ/k56K635/L9MFJnUnOR05uc4HA9XXi8fd+o7ZCVRB8D+ruKnkkPwYYI0QrS1fqkF0WQjPRgfse8VMyM2FQRrtkiGqDUNhRjnE4C2YXBXD3j6oEjYqGGjvB79ccPDyKN97noS5oX89ckMpNd0dUn16AqUy2FAnj77N+KztwYy0D7SmyDGAUDv4ESHxkJ866lfRUnpDggtqRm7/RjdgHe+OZKAzFpL8wyc0wpPMHwbER2+D4Ogy6xnJvz8P4YR4fRpbeRMAPwF/wv3BKI+hEcSQZtWSFC2UOXq8tHQGD+g2VC5V9yEmxyqonRpW/SzD55vpzB3N6XWhxBo9CoF9qa3HESpOGs1BYUhlY1HCUL6bT5RMQyKR21jORsPEr12cG8q8X06nSMYWlx36mByYTmJKy6HMTxVjQX8b43TA5Gmo4vgwRg40FT6TFXVyuvO41z9D9X/zcbyZP6Ae7HusQNmC8Vfc0wFD5K0IP+ZvXKlkZNscyyjkCrrIYtzC26K2N6TyCm0aGif//ONXFMZOd0KszAeQvWpVxU6maS0uLly3E2L28IeyAIcTPrUTHzFUQ8aqjV0FGYH8sjjSM0MtBU6WSAtmyb76l48ZBxCz6V4/M6wZPqZ2SFSp9kyy4pABNOsgNuuAkqKrIAT1J0WDhmOoSdSLAhE1qzFovE5WlafLAlYT4ESXCIX9Qk50pq6iVYRcutMkuo0d1NO3A3KeS0/RfBOOWjN1Kq1l6zGua1CBwIiNtxdaN+716GkXjTBDvUK29m2Zasbj6gpjPDprb8mlVXrnBurXRY57UX4+ZaYEIbHQ3X818MJZC6rRfitRPpymPyEqw1NGotSXyzwF37USzh6Dko9tRRtLby1ckf1ng+wFbqCLzbbaiHb1q6WyiAK6OCjqjXIzZ1vtY/Z27EBgqth1m/0jTnPnAXN++7BtAACmdXfp+6FyDuyhJDCnBpmafh9VpLndy2C70l+zFgd6wkm0ky0IP0znKZB+KeXxc6+0BiToaK3NC52j0FtzSPUZifYFuSqPf0/dIDhQIygMmK2r+quwWoii9BxZmdHRdFKDewX/uxNvsNQy1KSvRuwsY3HHSPz5uOW/6wfTQh4keopT6BTwNeVJI61wLJRzSbkU72Ic30PVFENXlbSQf5fKOZ06ksBgFFpsTDMKokErQJ4SJCSAEoJLyGPSYaMnBKYDEi6CCSD8rtIFecjLPmQeCEU8ek0XbKys+z93cqiQROswnDuB3E8xWITvXhpo22vwRE6ZGI5Qrg1UFLqhob2lxfStnTQsD6izCr2+mYcPNkRadm8MLC3afIGbAnTPdwC5C4LcAf8UBJVUU4Qw=="
+        const passwordHash = "9dRTJTSXkdfPnpMoZOThJQEkeIiK4BwAVnpnO8DvsjE="
+        function togglePwd() {
+            const input = document.getElementById('password');
+            const eyeImg = document.getElementById('eyeImg');
+            if (input.type === 'password') {
+                input.type = 'text';
+                eyeImg.src = imgSrcEyeOpened;
+            } else {
+                input.type = 'password';
+                eyeImg.src = imgSrcEyeClosed;
+            }
+        }
+        function getDataFromUrl() {
+            const passwordArea = document.getElementById('password');
+            const params = new URLSearchParams(window.location.search);
+            const password = params.get('password');
+            if (password) {
+                passwordArea.value = password;
+                decryptData();
+            }
+        }
+        function decryptData() {
+            const password = document.getElementById('password').value;
+            const outputEncrypted = document.getElementById('output-encrypted');
+            const status = document.getElementById('status');
+            window.history.replaceState(null, '', `?password=${encodeURIComponent(password)}`);
+            if (!password) {
+                status.textContent = '请输入密码';
+                return;
+            }
+            window.CryptoLib.sha256(password).then(hash => {
+                if (hash !== passwordHash) {
+                    status.textContent = '密码错误';
+                    return;
+                }
+                else {
+                    window.CryptoLib.decryptAES(encryptData, password)
+                        .then(decryptedData => {
+                            status.textContent = '解密成功';
+                            var data = JSON.parse(decryptedData);
+                            const contents = document.getElementById('contents');
+                            contents.innerHTML = '';
+                            contents.innerHTML += '<div style="height: 20;width: 100%;"></div>';
+                            for (let i = 65; i <= 90; i++) {
+                                var letter = String.fromCharCode(i);
+                                if (data[letter]) {
+                                    var text = data[letter][0];
+                                    for (let j = 1; j < data[letter].length; j++) {
+                                        text += " " + data[letter][j];
+                                    }
+                                    contents.innerHTML +=
+                                        `<div class="box">
+    <div class="title">
+        <h1 style="position: relative;left: 20;">${letter}</h1>
+    </div>
+    <br style="clear: both;">
+    <p class="pp">${text}</p>
+</div>
+<br style="height: 10;">`;
+
+                                }
+                            }
+                        })
+                        .catch(error => {
+                            status.textContent = '解密失败,';
+                            console.error(error);
+                        });
+                }
+            });
+
+        }
+        window.onload = getDataFromUrl;
+    </script>
 </body>
 
 </html>

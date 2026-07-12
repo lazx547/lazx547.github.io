@@ -11,6 +11,7 @@
     --link-hover-color: #5b5a5a;
     --solid-border: 6px solid #162e6a;
     --icon-fill-color: #3c3c43;
+    --textarea-bg-color:#f9f9f9;
     --img-b: 100%;
     --icon-brightness: 1.1;
 }
@@ -30,6 +31,7 @@
     --img-githubpage-link: "./images/githubpage_d.png";
     --solid-border: 6px solid #0062d2;
     --icon-fill-color: #f0f6fc;
+    --textarea-bg-color:#242427;
     --img-b: 0%;
     --icon-brightness: 0.9;
 }
@@ -91,7 +93,7 @@ a:hover {
     height: 30px;
 }
 
-.dis_b_c{
+.dis_b_c {
     background-color: var(--nav-hover-color);
 }
 
@@ -260,4 +262,105 @@ input:checked+.slider:before {
 
 #web-icon:hover {
     filter: brightness(var(--icon-brightness));
+}
+
+.encrypted-output-h3 {
+    font-size: 18px;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    float: left;
+    width: 15%;
+}
+
+.encrypted-output-textarea {
+    width: 75%;
+    height: 20px;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    max-width: 75%;
+    min-width: 75%;
+}
+
+.copy-button {
+    width: 5%;
+    height: 20px;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+#decrypt-button {
+    width: 5%;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+#submit-button {
+    width: 20%;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+#encrypt-button {
+    width: 30px;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+#clear-button {
+    width: 30px;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+#password {
+    width: 150px;
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-right:40px;
+}
+
+.password-visibility {
+    cursor: pointer;
+    height: 20px;
+    opacity: 60%;
+    padding: 13px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+
+.password-container {
+    position: relative;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease;
+}
+
+#data {
+    width: 90%;
+    height: 100px;
+    max-width: 90%;
+    min-width: 90%;
+}
+
+textarea {
+    color: var(--text-color);
+    background-color: var(--textarea-bg-color);
 }
