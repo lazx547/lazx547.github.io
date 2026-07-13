@@ -11,7 +11,7 @@
     --link-hover-color: #5b5a5a;
     --solid-border: 6px solid #162e6a;
     --icon-fill-color: #3c3c43;
-    --textarea-bg-color:#f9f9f9;
+    --textarea-bg-color: #f9f9f9;
     --img-b: 100%;
     --icon-brightness: 1.1;
 }
@@ -31,7 +31,7 @@
     --img-githubpage-link: "./images/githubpage_d.png";
     --solid-border: 6px solid #0062d2;
     --icon-fill-color: #f0f6fc;
-    --textarea-bg-color:#242427;
+    --textarea-bg-color: #242427;
     --img-b: 0%;
     --icon-brightness: 0.9;
 }
@@ -314,6 +314,7 @@ input:checked+.slider:before {
     margin-bottom: 5px;
     color: var(--text-color);
 }
+
 #clear-button {
     width: 30px;
     height: 20px;
@@ -327,7 +328,7 @@ input:checked+.slider:before {
     height: 20px;
     margin-top: 5px;
     margin-bottom: 5px;
-    padding-right:40px;
+    padding-right: 40px;
 }
 
 .password-visibility {
@@ -363,4 +364,28 @@ input:checked+.slider:before {
 textarea {
     color: var(--text-color);
     background-color: var(--textarea-bg-color);
+}
+
+
+.box {
+    width: 100%;
+    background-color: var(--div-bg-color);
+}
+
+
+.center {
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.title {
+    border-left: var(--solid-border);
+    float: left;
+}
+
+.pp {
+    font-size: 20px;
+    margin: 0;
+    margin-block-end: 2px;
 }
